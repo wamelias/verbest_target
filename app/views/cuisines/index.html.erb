@@ -17,7 +17,7 @@
       <% @cuisines.each do |cuisine| %>
       <tr>
         <td><%= cuisine.cuisine_name %></td>
-        <td><%= cuisine.bookmark_id %></td>
+        <td><%= cuisine.bookmark.venue_id %></td>
         <td>
           <a href="/cuisines/<%= cuisine.id %>" class="btn btn-primary">Show</a>
           <a href="/cuisines/<%= cuisine.id %>/edit" class="btn btn-warning">Edit</a>

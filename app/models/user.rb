@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :bestdishes,
+             :class_name => "Bookmark",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

@@ -9,13 +9,31 @@
       <dd><%= @dish.dish_name %></dd>
 
       <dt>Cuisine</dt>
-      <dd><%= @dish.cuisine_id %></dd>
+      <dd>
+        <% if @dish.cuisine.present? %>
+          <a href="/cuisines/<%= @dish.cuisine_id %>">
+            <%= @dish.cuisine.cuisine_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Bookmark</dt>
-      <dd><%= @dish.bookmark_id %></dd>
+      <dd>
+        <% if @dish.bestdish.present? %>
+          <a href="/bookmarks/<%= @dish.bookmark_id %>">
+            <%= @dish.bestdish.venue_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Venue</dt>
-      <dd><%= @dish.venue_id %></dd>
+      <dd>
+        <% if @dish.venue.present? %>
+          <a href="/venues/<%= @dish.venue_id %>">
+            <%= @dish.venue.venue_address %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

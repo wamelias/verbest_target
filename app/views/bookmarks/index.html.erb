@@ -18,8 +18,20 @@
 
       <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.venue.venue_address %></td>
-        <td><%= bookmark.user.email %></td>
+        <td>
+          <% if bookmark.venue.present? %>
+            <a href="/venues/<%= bookmark.venue.id %>">
+              <%= bookmark.venue.venue_address %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if bookmark.user.present? %>
+            <a href="/users/<%= bookmark.user.id %>">
+              <%= bookmark.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= bookmark.dish_name %></td>
         <td><%= bookmark.venue_name %></td>
         <td>

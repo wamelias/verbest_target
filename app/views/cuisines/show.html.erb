@@ -9,7 +9,13 @@
       <dd><%= @cuisine.cuisine_name %></dd>
 
       <dt>Bookmark</dt>
-      <dd><%= @cuisine.bookmark_id %></dd>
+      <dd>
+        <% if @cuisine.bookmark.present? %>
+          <a href="/bookmarks/<%= @cuisine.bookmark_id %>">
+            <%= @cuisine.bookmark.venue_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

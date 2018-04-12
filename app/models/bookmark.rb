@@ -1,6 +1,9 @@
 class Bookmark < ApplicationRecord
   # Direct associations
 
+  has_one    :cuisine,
+             :dependent => :destroy
+
   has_one    :dish,
              :dependent => :destroy
 
